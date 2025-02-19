@@ -1,6 +1,7 @@
 <script>
-	import LandingLink from '../components/landing/LandingLink.svelte';
-	import InlineLink from '../components/simple/InlineLink.svelte';
+
+	import LinkButton from '../components/landing/LinkButton.svelte';
+	import SmallHeading from '../components/landing/SmallHeading.svelte';
 </script>
 
 <div class="flex justify-center">
@@ -16,58 +17,44 @@
 
 			<div class="mt-4 mb-4 border-b border-b-gray-600/40"></div>
 
-			<h2>links</h2>
+			<div class="ml-4">
+				<SmallHeading>Links</SmallHeading>
 
-			<div class="mt-5 flex flex-col gap-3">
-				<div class="mb-2 px-4 flex flex-row gap-3">
-					<div class="size-14 bg-gray-500 rounded-2xl gh"></div>
-					<div class="flex flex-col">
-						<span class="font-semibold inline-flex items-center">
-							<span class="text-gray-400 font-semibold"> GitHub </span>
-							<span class="mx-2 text-gray-400">&#x2022; </span>
-							<InlineLink to-copy="gio3k" to-open="https://github.com/gio3k">
-								<p class="text-gray-300 font-normal">gio3k</p>
-							</InlineLink>
-						</span>
-						<span class="text-sm text-gray-300">
-							My personal projects are here
-						</span>
-					</div>
+				<div class="mt-2 flex flex-wrap gap-8">
+					<LinkButton
+						service-title="Email"
+						service-id="mail"
+						service-url="mailto:me@gio.blue"
+						user-title="me@gio.blue">
+						Send me an email
+					</LinkButton>
+
+					<LinkButton
+						service-title="GitHub"
+						service-id="github"
+						service-url="https://github.com/gio3k"
+						user-title="@gio3k">
+						See my personal projects
+					</LinkButton>
+
+					<LinkButton
+						service-title="Small Fish"
+						service-id="small-fish"
+						service-url="https://smallfi.sh">
+						Our game development team
+					</LinkButton>
 				</div>
 			</div>
 
-			<div class="mt-4 flex flex-col gap-3">
-				<div class="mb-2 px-4 flex flex-row gap-3">
-					<div class="size-14 bg-blue-500 rounded-2xl sf"></div>
-					<div class="flex flex-col">
-						<span class="font-semibold inline-flex items-center">
-							<span class="text-gray-300/90 font-semibold text-2xl"> Small Fish </span>
-							<span class="mx-2 text-gray-400">&#x2022; </span>
-							<p class="text-gray-300 font-normal">gio3k</p>
-						</span>
-						<span class="text-sm text-gray-300">
-							My personal projects are here
-						</span>
-					</div>
-				</div>
-			</div>
+			<div class="mt-6 mb-4 border-b border-b-gray-600/40"></div>
 
+			<div class="ml-4">
+				<SmallHeading>Posts</SmallHeading>
+			</div>
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
-  .gh {
-    background-image: url('images/github-mark-white.svg');
-    background-size: 70%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
 
-	.sf {
-    background-image: url('images/smallfish-logo-round.png');
-    background-size: 70%;
-    background-position: 50% 54%;
-    background-repeat: no-repeat;
-	}
 </style>
