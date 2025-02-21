@@ -2,6 +2,8 @@ import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+import { createHighlighter } from '@bitmachina/highlighter';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
@@ -10,7 +12,8 @@ const config = {
 		vitePreprocess({ script: true }),
 		mdsvex({
 			extensions: ['.md'],
-			smartypants: true
+			smartypants: true,
+			highlight: { highlighter: await createHighlighter({ theme: 'github-dark' }) }
 		})
 	],
 

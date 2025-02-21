@@ -50,6 +50,7 @@ a {
 
 p {
   margin-bottom: 1rem;
+  line-height: 1.8rem;
 }
 
 h1 {
@@ -78,12 +79,12 @@ h3 {
 }
 
 // Multi line code block
+span[data-line-number] {
+  display: block;
+}
+
 pre {
   background-color: var(--color-gray-800);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--color-gray-200);
-  }
 
   padding: 1rem;
   margin-bottom: 1rem;
@@ -91,6 +92,10 @@ pre {
   overflow-x: auto;
 
   border-radius: 0.5rem;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
 // Text inside single or multi line code blocks
@@ -117,7 +122,7 @@ code {
 
 blockquote {
   padding: 1rem;
-
+  margin-bottom: 1rem;
 
   border-left: 4px solid rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.05);
@@ -126,8 +131,6 @@ blockquote {
     border-left: 4px solid rgba(255, 255, 255, 0.2);
     background-color: rgba(0, 0, 0, 0.2);
   }
-
-  margin-bottom: 1rem;
 
   p {
     margin-bottom: 0;
