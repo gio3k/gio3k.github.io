@@ -30,7 +30,6 @@
 
       margin-top: 1px;
 
-      font-family: Inter, serif;
       font-weight: bold;
       font-size: 0.7rem;
 

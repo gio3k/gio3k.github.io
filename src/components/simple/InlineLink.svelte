@@ -27,8 +27,7 @@
 
       margin-top: 2px;
 
-      font-family: Inter, serif;
-      font-weight: bold;
+			font-weight: bold;
       font-size: 0.7rem;
 
       cursor: pointer;

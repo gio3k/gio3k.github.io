@@ -4,6 +4,6 @@
 	} = $props();
 </script>
 
-<div class="font-semibold uppercase">
+<div class="font-semibold uppercase text-gray-300/80">
 	{@render children?.()}
 </div>
