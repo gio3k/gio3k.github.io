@@ -11,7 +11,7 @@
 <div class="flex flex-col gap-8">
 	<Section>
 		<div class="mb-2">
-			<SmallHeading>Blog Posts</SmallHeading>
+			<SmallHeading>Blog</SmallHeading>
 		</div>
 
 		<div class="flex flex-col gap-10">

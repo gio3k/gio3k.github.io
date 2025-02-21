@@ -23,7 +23,7 @@
 
 </script>
 
-<div class="font-semibold text-gray-600 text-sm mb-0.5">
+<div class="font-semibold dark:text-gray-400 text-sm mb-0.5">
 	<span class="uppercase">{getBlogEntryDateString(entry.createdAt)}</span>
 	<span class="uppercase">— {getBlogEntryTagString(entry.tags)}</span>
 </div>

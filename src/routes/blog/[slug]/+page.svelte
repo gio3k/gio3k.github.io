@@ -20,8 +20,4 @@
 	<!-- <meta name="twitter:image" content="https://yourdomain.com/image_path" /> -->
 </svelte:head>
 
-<div>
-	<Section>
-		<BlogEntry entry={data} />
-	</Section>
-</div>
+<BlogEntry entry={data} />
