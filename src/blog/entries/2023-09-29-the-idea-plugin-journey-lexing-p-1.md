@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The IDEA plugin journey — Lexer Adaptation (p.1)
+title: Starting the IDEA plugin journey
 tags: 
   - greenery
   - IDEA 
