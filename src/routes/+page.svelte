@@ -8,13 +8,13 @@
 	const { blogEntries } = data;
 </script>
 
-<div class="flex flex-col gap-8">
-	<Section>
-		<div class="mb-2">
-			<SmallHeading>Blog</SmallHeading>
-		</div>
+<head>
+	<title>gio.blue</title>
+</head>
 
-		<div class="flex flex-col gap-10">
+<div class="flex flex-col">
+	<Section>
+		<div class="flex flex-row flex-wrap gap-5">
 			{#each blogEntries as blogEntry}
 				<BlogEntryPreview entry={blogEntry}></BlogEntryPreview>
 			{/each}

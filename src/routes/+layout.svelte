@@ -10,7 +10,7 @@
 
 <div class="flex flex-col items-center py-6 px-10 transition-all">
 	<div class="layout-main-content mt-6 px-2 whitespace-normal flex-1 max-w-5xl w-full">
-		<div class="grow mb-8">
+		<div class="grow mb-6">
 			<div class="mb-5">
 				<div class="text-4xl font-semibold">
 					Gianni <a class="text-xl font-medium" href="/">@ gio.blue</a>
@@ -41,6 +41,8 @@
 					</LinkButton>
 				</div>
 		</div>
+
+		<div class="border-b border-b-gray-200/50 dark:border-b-gray-700/50"></div>
 
 		{@render children()}
 	</div>

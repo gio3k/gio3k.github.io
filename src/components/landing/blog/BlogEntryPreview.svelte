@@ -12,8 +12,8 @@
 	} = $props();
 </script>
 
-<div class="flex flex-row items-center">
-	<div class="border-gray-600/40">
+<div class="flex shrink grow-0 flex-row items-center">
+	<div class="border-gray-300/40 border bg-gray-100/30 p-5 rounded-xl">
 		<a class="font-semibold text-2xl" href="blog/{entry.slug}">{entry.title}</a>
 		<BlogEntryInfoLine entry={entry} />
 		<span class="font-normal text-sm">
