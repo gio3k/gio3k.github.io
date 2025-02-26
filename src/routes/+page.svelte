@@ -116,7 +116,7 @@
 				color: var(--color-gray-400);
 			}
 
-			margin-top: 0.5rem;
+			margin-top: 0.7rem;
 
 			display: flex;
 			flex-direction: row;
