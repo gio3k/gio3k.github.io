@@ -10,7 +10,7 @@
 </script>
 
 <div class="flex flex-col items-center py-6 px-10 transition-all">
-	<div class="layout-main-content mt-6 px-2 whitespace-normal flex-1 min-w-2xs max-w-5xl w-full">
+	<div class="layout-main-content mt-6 px-2 whitespace-normal flex-1 min-w-[300px] max-w-5xl w-full">
 		<div class="grow mb-6">
 			<div class="mb-5">
 				<div class="text-4xl font-semibold">
@@ -22,7 +22,7 @@
 				</span>
 			</div>
 
-			<div class="flex flex-row justify-stretch flex-wrap gap-x-10 gap-y-5">
+			<div class="flex flex-row flex-wrap gap-x-10 gap-y-5">
 				{#if page.url.pathname !== '/'}
 					<LinkButton service-title="Home" service-id="gio-blue" service-url="/">
 						Return home

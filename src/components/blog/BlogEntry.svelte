@@ -18,9 +18,9 @@
 <div>
 	<Section>
 		<SmallHeading>{entry.type}</SmallHeading>
-		<div class="flex flex-col gap-y-0.5">
+		<div class="flex flex-col">
 			<div class="relative no-margins inline-flex flex-row justify-between gap-1">
-				<h1 class="no-margins blog-entry-heading">{entry.title}</h1>
+				<h1 class="no-margins blog-entry-heading pb-2">{entry.title}</h1>
 				<RoundButton href="/" icon="house-solid"></RoundButton>
 			</div>
 			<BlogEntryInfoLine {entry} />
