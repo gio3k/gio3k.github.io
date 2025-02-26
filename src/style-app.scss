@@ -32,7 +32,7 @@ a, p, span, pre, code {
 }
 
 a {
-  :not(.native) {
+  &:not(.native) {
     transition: all 0.12s ease;
 
     overflow-wrap: break-word;
