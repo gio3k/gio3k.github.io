@@ -5,7 +5,7 @@ name: Deploy static SvelteKit content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["gh-pages"]
+    branches: [ "gh-pages" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,25 +27,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
+          cache: npm
           node-version: 20
 
-      - name: Display contents
-        run: ls -la
-
       - name: Install dependencies
-        run: npm i
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-        with:
-          static_site_generator: "sveltekit"
+        run: npm install
 
       - name: Build site
+        env:
+          BASE_PATH: '/${{ github.event.repository.name }}'
         run: npm run build
 
       - name: Upload artifact
@@ -56,7 +51,11 @@ jobs:
   deploy:
     needs: build-site
     runs-on: ubuntu-latest
-    
+
+    permissions:
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -64,4 +63,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
