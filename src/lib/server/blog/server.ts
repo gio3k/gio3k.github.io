@@ -19,7 +19,11 @@ type EntryTimeInfo = {
 async function findEntryTimeInfoBySlug(slug: string): Promise<EntryTimeInfo | undefined> {
 	// @ts-ignore
 	const dirname: string = import.meta.dirname;
+	console.log(dirname)
+	console.log(`../../../../src/blog/entries/${slug}.md`)
+
 	const entryPath = path.resolve(dirname, `../../../../src/blog/entries/${slug}.md`);
+	console.log(entryPath)
 
 	let stat;
 	try {
