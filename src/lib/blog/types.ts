@@ -1,6 +1,8 @@
 ﻿export type BlogEntryMetaInfo = {
 	title: string;
-	createdAt?: string;
+	type?: string;
+	createdAt?: Date;
+	updatedAt?: Date;
 	tags?: string[];
 };
 
@@ -24,6 +26,7 @@ export type RenderedBlogEntryWithContent = {
 	content: string;
 } & RenderedBlogEntry;
 
+// @ts-ignore
 declare module '*.md' {
 	import type { SvelteComponent } from 'svelte';
 

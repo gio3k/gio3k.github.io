@@ -7,7 +7,7 @@
 		entry: RenderedBlogEntry,
 	} = $props();
 
-	function getBlogEntryDateString(dateString?: string) {
+	function getBlogEntryDateString(dateString?: string | Date) {
 		if (dateString === undefined) return 'Unknown Date';
 
 		const date = new Date(dateString);
@@ -23,9 +23,9 @@
 
 </script>
 
-<div class="font-semibold dark:text-gray-400 text-sm mb-0.5">
+<div class="font-semibold text-gray-500 text-sm mb-0.5">
 	<span class="uppercase">{getBlogEntryDateString(entry.createdAt)}</span>
 	{#if entry.tags !== undefined}
-		<span class="uppercase text-gray-400 dark:text-gray-500">— {getBlogEntryTagString(entry.tags)}</span>
+		<span class="uppercase text-gray-400 dark:text-gray-600">— {getBlogEntryTagString(entry.tags)}</span>
 	{/if}
 </div>

@@ -6,6 +6,33 @@ import type {
 } from '$lib/blog/types';
 import { render } from 'svelte/server';
 import { DOMParser, parseHTML } from 'linkedom';
+// @ts-ignore
+import fs from 'node:fs/promises';
+// @ts-ignore
+import path from 'node:path';
+
+type EntryTimeInfo = {
+	createdAt?: Date;
+	updatedAt?: Date;
+};
+
+async function findEntryTimeInfoBySlug(slug: string): Promise<EntryTimeInfo | undefined> {
+	// @ts-ignore
+	const dirname: string = import.meta.dirname;
+	const entryPath = path.resolve(dirname, `../../../../src/blog/entries/${slug}.md`);
+
+	let stat;
+	try {
+		stat = await fs.stat(entryPath);
+	} catch (e) {
+		return undefined;
+	}
+
+	return {
+		createdAt: new Date(stat.ctime),
+		updatedAt: new Date(stat.mtime)
+	};
+}
 
 async function getRenderedBlogEntryForComponent(
 	slug: string,
@@ -18,7 +45,7 @@ async function getRenderedBlogEntryForComponent(
 		coverImageUrl: ''
 	};
 
-	const { window, document, HTMLElement } = parseHTML(renderOutput.body);
+	const { document } = parseHTML(renderOutput.body);
 
 	// Get .coverImageUrl
 	// Find the first image
@@ -37,13 +64,33 @@ async function getRenderedBlogEntryForComponent(
 		renderedBlogEntry.contentPreview = documentText.substring(0, PREVIEW_MAX_SIZE);
 	}
 
-	return {
+	let result: RenderedBlogEntryWithContent = {
 		slug,
 		content: renderOutput.body,
-		createdAt: component.metadata.created_at,
 		...renderedBlogEntry,
 		...(component.metadata as BlogEntryMetaInfo)
 	};
+
+	result.type ??= 'post';
+
+	if (component.metadata.created_at !== undefined) {
+		result.createdAt = new Date(component.metadata.created_at);
+	}
+
+	if (component.metadata.updated_at !== undefined) {
+		result.updatedAt = new Date(component.metadata.updated_at);
+	}
+
+	if (result.createdAt === undefined || result.updatedAt === undefined) {
+		// Find time info through node:fs
+		const timeInfo = await findEntryTimeInfoBySlug(slug);
+		if (timeInfo !== undefined) {
+			result.createdAt ??= timeInfo.createdAt;
+			result.updatedAt ??= timeInfo.updatedAt;
+		}
+	}
+
+	return result;
 }
 
 export async function getAllRenderedBlogEntries(): Promise<RenderedBlogEntry[]> {

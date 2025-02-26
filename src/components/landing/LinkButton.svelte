@@ -8,13 +8,12 @@
 	} = $props();
 
 	function onClick() {
-		window.open(serviceUrl);
+		window.location.href = serviceUrl;
 	}
 
 	function onKeyDown(e: KeyboardEvent) {
 		if (e.key !== 'Enter') return;
-
-		window.open(serviceUrl);
+		window.location.href = serviceUrl;
 	}
 </script>
 
@@ -31,7 +30,7 @@
 	<div class="flex flex-col mt-0.5">
 		<div class="flex flex-row items-center">
 			<span class="title-service font-semibold select-none"> {serviceTitle} </span>
-			<span class="title-user ml-1.5 mb-[0.1rem] font-mono"> {userTitle} </span>
+			<span class="title-user ml-1.5 mb-[0.0rem] font-mono"> {userTitle} </span>
 		</div>
 		<span class="text-sm content">
 			{@render children?.()}

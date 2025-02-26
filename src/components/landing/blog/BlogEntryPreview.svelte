@@ -16,9 +16,11 @@
 	<div class="border-gray-300/40 border bg-gray-100/30 p-5 rounded-xl">
 		<a class="font-semibold text-2xl" href="blog/{entry.slug}">{entry.title}</a>
 		<BlogEntryInfoLine entry={entry} />
-		<span class="font-normal text-sm">
+		<div class="mt-2 font-normal text-sm">
 			{entry.contentPreview}
-		</span>
-		<a class="font-semibold text-sm" href="blog/{entry.slug}"> [read more] </a>
+		</div>
+		<div class="mt-2">
+			<a class="font-semibold text-sm" href="blog/{entry.slug}"> [read more] </a>
+		</div>
 	</div>
 </div>

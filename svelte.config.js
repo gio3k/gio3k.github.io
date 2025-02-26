@@ -13,7 +13,9 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			smartypants: true,
-			highlight: { highlighter: await createHighlighter({ theme: 'github-dark' }) }
+			highlight: {
+				highlighter: await createHighlighter({ themes: ['min-light', 'min-dark'] })
+			}
 		})
 	],
 

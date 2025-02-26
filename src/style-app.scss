@@ -3,12 +3,15 @@
 html {
   font-size: 16px;
 
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+
   @media (prefers-color-scheme: dark) {
     background-color: var(--color-gray-800);
-    color: var(--color-gray-100);
+    color: var(--color-gray-200);
   }
 }
-
 
 @media (width < 600px) {
   html {
@@ -84,9 +87,9 @@ span[data-line-number] {
 }
 
 pre {
-  background-color: var(--color-gray-800);
+  background-color: var(--color-gray-100);
 
-  padding: 1rem;
+  padding: 1.2rem;
   margin-bottom: 1rem;
 
   overflow-x: auto;
@@ -94,20 +97,20 @@ pre {
   border-radius: 0.5rem;
 
   @media (prefers-color-scheme: dark) {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--color-gray-100);
   }
 }
 
 // Text inside single or multi line code blocks
 code {
-  color: var(--color-gray-100);
+  color: var(--color-gray-500);
 
   &:not(pre code) {
     // Add padding for single line blocks
     padding: 0.1rem 0.3rem;
     border-radius: 0.2rem;
 
-    background-color: var(--color-gray-700);
+    background-color: var(--color-gray-100);
 
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-gray-100);
