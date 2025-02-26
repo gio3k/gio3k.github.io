@@ -16,7 +16,7 @@
 
 <div class="flex flex-col">
 	<Section>
-		<div class="flex flex-col gap-3.5">
+		<div class="flex flex-col gap-8">
 			{#each blogEntries as blogEntry}
 				<div class="entry entry-type-{blogEntry.type}">
 					<!-- Type Header -->
@@ -76,12 +76,10 @@
   }
 
   .entry {
-    border-radius: 1rem;
     overflow: hidden;
-    padding: 1.3rem 1.5rem;
 
-    background-color: var(--item-background);
-    border: 1px solid var(--item-border);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
     .entry-type-heading-bead {
       width: 0.7rem;
@@ -126,6 +124,10 @@
       flex-wrap: wrap;
 
       line-height: 1.8rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
 </style>
