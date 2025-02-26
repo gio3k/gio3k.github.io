@@ -25,14 +25,10 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: undefined
-		}),
-		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
-		},
-		prerender: {
-			default: true
-		}
+			fallback: undefined,
+			precompress: false,
+			strict: true
+		})
 	},
 
 	extensions: ['.svelte', '.md']
