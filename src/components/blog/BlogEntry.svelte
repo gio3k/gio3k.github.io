@@ -17,13 +17,15 @@
 
 <div>
 	<Section>
-		<SmallHeading>{entry.type}</SmallHeading>
-		<div class="flex flex-col">
-			<div class="relative no-margins inline-flex flex-row justify-between gap-1">
+		<div class="relative no-margins inline-flex flex-row justify-between gap-3">
+			<div class="flex flex-col">
+				<SmallHeading>{entry.type}</SmallHeading>
 				<h1 class="no-margins blog-entry-heading pb-2">{entry.title}</h1>
-				<RoundButton href="/" icon="house-solid"></RoundButton>
+				<BlogEntryInfoLine {entry} />
 			</div>
-			<BlogEntryInfoLine {entry} />
+			<span class="mt-3">
+				<RoundButton href="/" icon="house-solid"></RoundButton>
+			</span>
 		</div>
 		<div class="mt-5">
 			{@html entry.content}

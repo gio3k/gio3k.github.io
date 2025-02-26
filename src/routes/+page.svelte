@@ -30,17 +30,17 @@
 							</div>
 
 							<!-- Entry Title -->
-							<div
-								class="entry-title text-3xl font-semibold"
-							>
-								<div>{blogEntry.title}</div>
+							<div class="entry-title text-3xl font-semibold">
+								<div><a class="native" href="/blog/{blogEntry.slug}">{blogEntry.title}</a></div>
 							</div>
 							<div class="mt-0.5">
 								<BlogEntryInfoLine entry={blogEntry} />
 							</div>
 						</div>
 
-						<RoundButton href="/blog/{blogEntry.slug}"></RoundButton>
+						<span class="mt-3">
+							<RoundButton href="/blog/{blogEntry.slug}"></RoundButton>
+						</span>
 					</div>
 
 					<!-- Content -->
@@ -57,77 +57,76 @@
 </div>
 
 <style lang="scss">
-  :root {
-    --item-background: rgba(0, 0, 0, 0.02);
-    --item-background-hover: rgba(0, 0, 0, 0.05);
-    --item-border: rgba(0, 0, 0, 0.1);
-    --type-project-primary: var(--color-pink-400);
-    --type-post-primary: var(--color-blue-400);
-    --entry-header-background: rgba(0, 0, 0, 0.05);
+	:root {
+		--item-background: rgba(0, 0, 0, 0.02);
+		--item-background-hover: rgba(0, 0, 0, 0.05);
+		--item-border: rgba(0, 0, 0, 0.1);
+		--type-project-primary: var(--color-pink-400);
+		--type-post-primary: var(--color-blue-400);
+		--entry-header-background: rgba(0, 0, 0, 0.05);
 
-    @media (prefers-color-scheme: dark) {
-      --item-background: rgba(255, 255, 255, 0.02);
-      --item-background-hover: rgba(0, 0, 0, 0.2);
-      --item-border: rgba(255, 255, 255, 0.05);
-      --type-project-primary: var(--color-pink-400);
-      --type-post-primary: var(--color-blue-400);
-      --entry-header-background: rgba(0, 0, 0, 0.8);
-    }
-  }
+		@media (prefers-color-scheme: dark) {
+			--item-background: rgba(255, 255, 255, 0.02);
+			--item-background-hover: rgba(0, 0, 0, 0.2);
+			--item-border: rgba(255, 255, 255, 0.05);
+			--type-project-primary: var(--color-pink-400);
+			--type-post-primary: var(--color-blue-400);
+			--entry-header-background: rgba(0, 0, 0, 0.8);
+		}
+	}
 
-  .entry {
-    overflow: hidden;
+	.entry {
+		overflow: hidden;
 
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		padding-bottom: 0.8rem;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 
-    .entry-type-heading-bead {
-      width: 0.7rem;
-      height: 0.7rem;
-      border-radius: 50%;
-      background-color: transparent;
-    }
+		.entry-type-heading-bead {
+			width: 0.7rem;
+			height: 0.7rem;
+			border-radius: 50%;
+			background-color: transparent;
+		}
 
+		&.entry-type-post {
+			.entry-type-heading-bead {
+				background-color: var(--type-post-primary);
+			}
+		}
 
-    &.entry-type-post {
-      .entry-type-heading-bead {
-        background-color: var(--type-post-primary);
-      }
-    }
+		&.entry-type-project {
+			// flex-basis: 10%;
 
-    &.entry-type-project {
-      // flex-basis: 10%;
+			.entry-type-heading-bead {
+				background-color: var(--type-project-primary);
+			}
+		}
 
-      .entry-type-heading-bead {
-        background-color: var(--type-project-primary);
-      }
-    }
+		.entry-header {
+			// width: 100%;
 
-    .entry-header {
-      // width: 100%;
+			padding: 0.5rem 1.5rem;
+			z-index: 20;
+		}
 
-      padding: 0.5rem 1.5rem;
-      z-index: 20;
-    }
+		.content {
+			color: var(--color-gray-500);
 
-    .content {
-      color: var(--color-gray-500);
+			@media (prefers-color-scheme: dark) {
+				color: var(--color-gray-400);
+			}
 
-      @media (prefers-color-scheme: dark) {
-        color: var(--color-gray-400);
-      }
+			margin-top: 0.5rem;
 
-      margin-top: 1rem;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
 
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+			line-height: 1.8rem;
+		}
 
-      line-height: 1.8rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-  }
+		@media (prefers-color-scheme: dark) {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+		}
+	}
 </style>
