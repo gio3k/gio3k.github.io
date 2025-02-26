@@ -40,7 +40,6 @@ jobs:
 
       - name: Build site
         run: | 
-          export BASE_PATH="/"
           npm run build
 
       - name: Upload artifact
