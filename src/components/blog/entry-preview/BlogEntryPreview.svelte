@@ -28,7 +28,7 @@
 
 	<!-- Content -->
 	<div
-		class="rounded-b-2xl border-l-2 border-gray-200 dark:border-gray-700 px-6 pb-4 content overflow-scroll">
+		class="border-l-2 border-gray-200 dark:border-gray-700 px-6 pb-4 content overflow-scroll">
 		<div class="left">
 			{entry.contentPreview}
 			<a href="/blog/{entry.slug}">[read more]</a>
