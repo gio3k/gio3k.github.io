@@ -40,7 +40,7 @@ jobs:
 
       - name: Build site
         run: |
-          svelte-kit sync
+          npx svelte-kit sync
           npm run build
 
       - name: Upload artifact
