@@ -32,10 +32,20 @@ html {
 }
 
 .clickable {
+  transition: transform 0.12s ease;
+
   &:hover {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.10);
-    filter: brightness(0.8);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+
+    &:not(.no-darkening) {
+      filter: brightness(0.89);
+    }
+
     cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 

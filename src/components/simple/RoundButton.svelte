@@ -10,8 +10,6 @@
     flex-shrink: 0;
     transition: background-color 0.12s ease;
 
-    background-color: var(--color-blue-400);
-
     opacity: 0.8;
 
     width: calc(var(--spacing) * 12);
@@ -32,8 +30,13 @@
 
     border-radius: 50%;
 
+		// border: 2px solid white;
+
+    background-color: var(--color-blue-400);
+
     &:hover {
       cursor: pointer;
+
       background-color: var(--color-blue-500);
     }
   }
@@ -41,7 +44,7 @@
 
 
 <div
-	class="button"
+	class="button clickable no-darkening"
 	onclick={() => (window.location.href = href)}
 	onkeydown={(e) =>  e.key === "enter" && (window.location.href = href)}
 	role="button"
