@@ -35,10 +35,10 @@
 		"vite": "^6.1.1"
 	},
 	"dependencies": {
-		"@bitmachina/highlighter": "^1.0.0-alpha.6",
 		"@splidejs/svelte-splide": "^0.2.9",
 		"@tailwindcss/vite": "^4.0.7",
 		"linkedom": "^0.18.9",
+		"shiki": "^3.1.0",
 		"tailwindcss": "^4.0.7"
 	}
 }

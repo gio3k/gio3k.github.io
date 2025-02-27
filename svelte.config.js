@@ -1,7 +1,7 @@
 import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { createHighlighter } from '@bitmachina/highlighter';
+import highlighter from './shiki.highlight.ts';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,8 +12,9 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			smartypants: true,
+			remarkPlugins: [],
 			highlight: {
-				highlighter: await createHighlighter({ themes: ['min-light', 'min-dark'] })
+				highlighter
 			}
 		})
 	],
