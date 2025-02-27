@@ -3,8 +3,6 @@ import { getAllRenderedBlogEntries } from '$lib/server/blog';
 const root = 'https://gio.blue';
 
 export async function GET() {
-	const blogEntries = (await getAllRenderedBlogEntries()).map((v) => `${root}/${v.slug}`);
-
 	return new Response(
 		`
 		<?xml version="1.0" encoding="UTF-8" ?>
