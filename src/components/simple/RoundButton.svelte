@@ -1,5 +1,5 @@
 <script>
-	let { href, icon = "arrow-right-solid" } = $props();
+	let { href, icon = 'arrow-right-solid' } = $props();
 </script>
 
 <style lang="scss">
@@ -24,20 +24,33 @@
       background-size: 40%;
       background-repeat: no-repeat;
       background-position: center;
-
-      filter: invert(1);
     }
 
     border-radius: 50%;
 
-		// border: 2px solid white;
+    // background-color: var(--color-blue-300);
 
-    background-color: var(--color-blue-400);
+    border: 3px solid var(--color-gray-300);
 
     &:hover {
       cursor: pointer;
+      background-color: var(--color-gray-200);
 
-      background-color: var(--color-blue-500);
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--color-gray-700);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border: 3px solid var(--color-gray-500);
+    }
+
+    .icon {
+      filter: invert(0.5);
+
+      @media (prefers-color-scheme: dark) {
+        filter: invert(0.8);
+      }
     }
   }
 </style>

@@ -23,11 +23,11 @@
 			</div>
 
 			<div class="flex flex-row flex-wrap gap-x-10 gap-y-5">
-				{#if page.url.pathname !== '/'}
+				<!--{#if page.url.pathname !== '/'}
 					<LinkButton service-title="Home" service-id="gio-blue" service-url="/">
 						Return home
 					</LinkButton>
-				{/if}
+				{/if}-->
 
 				<LinkButton
 					service-title="Email"

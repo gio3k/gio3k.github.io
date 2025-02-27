@@ -1,0 +1,9 @@
+:root {
+  --type-project-primary: var(--color-pink-400);
+  --type-post-primary: var(--color-blue-400);
+
+  @media (prefers-color-scheme: dark) {
+    --type-project-primary: var(--color-pink-400);
+    --type-post-primary: var(--color-blue-400);
+  }
+}

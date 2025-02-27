@@ -1,0 +1,7 @@
+:root {
+  --type-heading-color: var(--color-gray-500);
+
+  @media (prefers-color-scheme: dark) {
+    --type-heading-color: var(--color-gray-500);
+  }
+}
