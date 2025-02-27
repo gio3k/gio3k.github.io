@@ -11,7 +11,7 @@
 	<title>gio.blue</title>
 </head>
 
-<div class="flex flex-col">
+<div class="flex flex-col mt-12">
 	<Section>
 		<div class="flex flex-col gap-8">
 			{#each blogEntries as blogEntry}
