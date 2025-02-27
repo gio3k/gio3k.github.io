@@ -79,7 +79,7 @@
 		overflow: hidden;
 
 		padding-bottom: 0.8rem;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+		// border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 
 		.entry-type-heading-bead {
 			width: 0.7rem;
