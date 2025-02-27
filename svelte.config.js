@@ -3,6 +3,7 @@ import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import highlighter from './shiki.highlight.ts';
 import rehypeSlug from 'rehype-slug';
+import remarkFootnotes from 'remark-footnotes';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,6 +14,7 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			smartypants: true,
+			remarkPlugins: [remarkFootnotes],
 			rehypePlugins: [rehypeSlug],
 			highlight: {
 				highlighter
