@@ -40,3 +40,5 @@ export async function GET() {
 		}
 	);
 }
+
+export const prerender = true;
