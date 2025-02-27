@@ -21,7 +21,7 @@
 				<div class="font-semibold uppercase text-gray-600 dark:text-gray-400/90">
 					{entry.type}
 				</div>
-				<h1 class="no-margins blog-entry-heading pb-2">{entry.title}</h1>
+				<h1 class="no-margins pb-2 text-2xl/13">{entry.title}</h1>
 				<BlogEntryInfoLine {entry} />
 			</div>
 			<span class="mt-3">
@@ -33,9 +33,3 @@
 		</div>
 	</Section>
 </div>
-
-<style lang="scss">
-	.blog-entry-heading {
-		line-height: 2.8rem;
-	}
-</style>
