@@ -1,5 +1,5 @@
 ﻿import type { PageServerLoad } from './$types';
-import { getAllRenderedBlogEntries } from '$lib/server/blog/server';
+import { getAllRenderedBlogEntries } from '$lib/server/blog';
 
 export const load: PageServerLoad = async ({ params }) => {
 	return {

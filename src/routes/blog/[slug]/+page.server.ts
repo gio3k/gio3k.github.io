@@ -1,5 +1,5 @@
 ﻿import type { EntryGenerator, PageServerLoad } from './$types';
-import { getAllRenderedBlogEntries, getRenderedBlogEntryWithContentForSlug } from '$lib/server/blog/server';
+import { getAllRenderedBlogEntries, getRenderedBlogEntryWithContentForSlug } from '$lib/server/blog';
 export const entries: EntryGenerator = async () => {
 	const result = [];
 	for (const i of await getAllRenderedBlogEntries()) {
