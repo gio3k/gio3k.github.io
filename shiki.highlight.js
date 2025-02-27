@@ -1,6 +1,6 @@
 import { codeToHtml } from 'shiki';
 
-export default async function highlight(code: string, lang: string) {
+export default async function highlight(code, lang) {
 	const themes = {
 		light: 'min-light',
 		dark: 'nord'

@@ -1,7 +1,7 @@
 import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import highlighter from './shiki.highlight.ts';
+import highlighter from './shiki.highlight.js';
 import rehypeSlug from 'rehype-slug';
 import remarkFootnotes from 'remark-footnotes';
 
