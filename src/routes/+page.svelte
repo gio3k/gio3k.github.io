@@ -1,8 +1,5 @@
 <script>
-	import LinkButton from '../components/landing/LinkButton.svelte';
-	import SmallHeading from '../components/landing/SmallHeading.svelte';
 	import Section from '../components/landing/Section.svelte';
-	import BlogEntryPreview from '../components/landing/blog/BlogEntryPreview.svelte';
 	import BlogEntryInfoLine from '../components/blog/BlogEntryInfoLine.svelte';
 	import RoundButton from '../components/simple/RoundButton.svelte';
 
