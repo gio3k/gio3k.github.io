@@ -2,6 +2,9 @@
 layout: post
 title: macOS Keyboard Emulation with C#
 created_at: 2023-12-11 21:54 +0800
+tags:
+    - mac
+    - c#
 ---
 
 By using the CoreGraphics API in macOS, a developer can emulate a key press without any physical interaction. Doing that

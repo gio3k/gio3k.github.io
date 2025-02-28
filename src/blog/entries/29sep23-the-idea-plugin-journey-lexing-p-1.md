@@ -2,9 +2,9 @@
 layout: post
 title: Starting the IDEA plugin journey
 tags: 
-  - greenery
   - IDEA 
-  - gdscript
+  - godot
+  - kotlin
 created_at: 2023-09-29 01:00 +0800
 ---
 
