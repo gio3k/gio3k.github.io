@@ -19,11 +19,11 @@ type EntryTimeInfo = {
 async function findEntryTimeInfoBySlug(slug: string): Promise<EntryTimeInfo | undefined> {
 	// @ts-ignore
 	const dirname: string = import.meta.dirname;
-	console.log(dirname)
-	console.log(`../../../../src/blog/entries/${slug}.md`)
+	console.log(dirname);
+	console.log(`../../../../src/blog/entries/${slug}.md`);
 
 	const entryPath = path.resolve(dirname, `../../../../src/blog/entries/${slug}.md`);
-	console.log(entryPath)
+	console.log(entryPath);
 
 	let stat;
 	try {
@@ -64,7 +64,10 @@ async function getRenderedBlogEntryForComponent(
 	// Get .contentPreview
 	{
 		const PREVIEW_MAX_SIZE = 512;
-		const documentText = document.documentElement.innerText;
+		const documentText =
+			document.documentElement !== null && document.documentElement !== undefined
+				? document.documentElement.innerText
+				: '';
 		renderedBlogEntry.contentPreview = documentText.substring(0, PREVIEW_MAX_SIZE);
 	}
 
