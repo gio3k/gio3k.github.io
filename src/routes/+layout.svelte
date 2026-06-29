@@ -41,8 +41,8 @@
 				<LinkButton
 					service-title="GitHub"
 					service-id="github"
-					service-url="https://github.com/gio3k"
-					user-title="@gio3k"
+					service-url="https://github.com/giodotblue"
+					user-title="@giodotblue"
 				>
 					See my personal projects
 				</LinkButton>
